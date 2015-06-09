@@ -3,6 +3,7 @@ package com.auto.test;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.net.MalformedURLException;
@@ -16,13 +17,15 @@ public class TaskTest extends BaseTest {
 
     @Before
     public void setUp() throws MalformedURLException {
-        driver = new FirefoxDriver();
+        //System.setProperty("webdriver.chrome.driver", "/usr/local/share/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+
         driver.get("https://www.google.ru");
     }
 
     @After
     public void tearDown() {
-        driver.quit();
+        driver.close();
     }
 
     @Test
