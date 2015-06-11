@@ -1,11 +1,13 @@
 package com.auto.test;
 
-import java.net.MalformedURLException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.net.MalformedURLException;
+
+//import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
  * Created by none on 09.06.15.
