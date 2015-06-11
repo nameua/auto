@@ -26,5 +26,8 @@
         <module name="auto" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auto" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
