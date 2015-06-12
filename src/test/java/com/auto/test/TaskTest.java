@@ -1,31 +1,28 @@
 package com.auto.test;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.net.MalformedURLException;
-
+import org.openqa.selenium.support.PageFactory;
+import page.SearchPage;
 //import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
  * Created by none on 09.06.15.
  */
-public class TaskTest extends BaseTest{
-
-    public void startWebDriver()  {
-
-        System.setProperty("webdriver.chrome.driver", this.getClass().getClassLoader().getResource("chromedriver").getPath());
-
-    }
-
+public class TaskTest extends BaseTest {
+    private static Logger logger = Logger.getLogger(TaskTest.class);
+    private SearchPage searchPage;
 
     @Before
-    public void setUp() throws MalformedURLException {
+    public void setUp() {
         //driver = new FirefoxDriver();
         driver = new ChromeDriver();
-        driver.get("https://www.google.ru");
+        logger.info("Running Chrome browser");
+        driver.manage().window().maximize();
+        searchPage = PageFactory.initElements(driver, SearchPage.class);
     }
 
     @After
@@ -35,11 +32,9 @@ public class TaskTest extends BaseTest{
     }
 
     @Test
-    public void searchResult(){
-
-
+    public void searchResult() {
+        driver.get("https://www.google.ru");
+        searchPage.clickSearchPage("Kreditech");
     }
-
-
 
 }
