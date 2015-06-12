@@ -16,7 +16,8 @@ public class BasePage {
         this.driver=driver;
     }
 
-    protected void waitForLoad(WebDriver driver) {
+    //This method is for a waiting while the page will be fully loaded
+    public void waitForLoad(WebDriver driver) {
         ExpectedCondition<Boolean> pageLoadCondition = new
                 ExpectedCondition<Boolean>() {
                     public Boolean apply(WebDriver driver) {
