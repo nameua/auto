@@ -22,11 +22,13 @@ public class TaskTest extends BaseTest {
     public void setUp() {
         //driver = new FirefoxDriver();
         //logger.info("Running Firefox browser");
+
         driver = new ChromeDriver();
         logger.info("Running Chrome browser");
         driver.manage().window().maximize();
         logger.info("Maximaze browser");
         searchPage = PageFactory.initElements(driver, SearchPage.class);
+
     }
 
     @After

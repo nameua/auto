@@ -27,7 +27,7 @@ public class LandingPage extends BasePage{
 
     public void clickWhatWeDo(){
         whatWeDo.click();
-        logger.info("Click a link: " + whatWeDo.getText().toString());
+        logger.info("Click a link: " + whatWeDo.getText());
         //waitForLoad();
         try {
             Thread.sleep(5000);
