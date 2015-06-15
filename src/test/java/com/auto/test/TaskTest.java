@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import page.SearchPage;
 import page.kreditechPage.LandingPage;
+import page.kreditechPage.WhatWeDoPage;
+import page.kreditechPage.WhoWeArePage;
 //import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
@@ -17,6 +19,8 @@ public class TaskTest extends BaseTest {
     private static Logger logger = Logger.getLogger(TaskTest.class);
     private SearchPage searchPage;
     private LandingPage landingPage;
+    private WhoWeArePage whoWeArePage;
+    private WhatWeDoPage whatWeDoPage;
 
     @Before
     public void setUp() {
@@ -43,8 +47,9 @@ public class TaskTest extends BaseTest {
         driver.get("https://www.google.ru");
         logger.info("Navigate to the google.ru");
         searchPage.clickSearchPage("Kreditech");
-        searchPage.navigateToKreditechLink();
-        landingPage.clickWhatWeDo();
+        landingPage = searchPage.navigateToKreditechLink();
+        whoWeArePage = landingPage.clickWhoWeAre();
+        whatWeDoPage = whoWeArePage.clickWhatWeDo();
     }
 
 }
