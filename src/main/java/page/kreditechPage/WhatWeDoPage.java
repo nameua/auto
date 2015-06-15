@@ -16,7 +16,7 @@ public class WhatWeDoPage extends BasePage{
 
     private static Logger logger = Logger.getLogger(WhatWeDoPage.class);
 
-    public void verifyCorrectPage (WebDriver driver){
+    public void verifyCorrectPage (){
         logger.info("Current page: " + driver.getTitle());
         Assert.assertEquals("What we do - Kreditech",driver.getTitle());
 

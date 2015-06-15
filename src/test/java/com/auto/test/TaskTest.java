@@ -50,6 +50,7 @@ public class TaskTest extends BaseTest {
         landingPage = searchPage.navigateToKreditechLink();
         whoWeArePage = landingPage.clickWhoWeAre();
         whatWeDoPage = whoWeArePage.clickWhatWeDo();
+        whatWeDoPage.verifyCorrectPage();
     }
 
 }
