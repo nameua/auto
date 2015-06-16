@@ -13,6 +13,8 @@ import page.kreditechPage.WhoWeArePage;
 //import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
+ * This is a test case represent search on google.ru and basic navigation by the kreditech.com page.
+ *
  * Created by none on 09.06.15.
  */
 public class TaskTest extends BaseTest {
@@ -25,13 +27,14 @@ public class TaskTest extends BaseTest {
     private final String SEARCH_WORD = "Kreditech";
     @Before
     public void setUp() {
+
         //driver = new FirefoxDriver();
         //logger.info("Running Firefox browser");
+
         driver = new ChromeDriver();
         logger.info("Running Chrome browser");
         driver.manage().window().maximize();
         logger.info("Maximaze browser");
-
         searchPage = PageFactory.initElements(driver, SearchPage.class);
         landingPage = PageFactory.initElements(driver, LandingPage.class);
         whoWeArePage = PageFactory.initElements(driver, WhoWeArePage.class);

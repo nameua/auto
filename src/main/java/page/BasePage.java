@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
+ * Represents general methods and descriptions for all the pages.
+ *
  * Created by tykhon on 6/11/15.
  */
 public class BasePage {
@@ -16,6 +18,11 @@ public class BasePage {
         this.driver=driver;
     }
 
+    /**
+     * Provide ability to stop execution while the whole page will be loaded into the browser.
+     *
+     * @param driver - implementation that controls a Chrome browser running on the local machine.
+     */
     //This method is for a waiting while the page will be fully loaded
     public void waitForLoad(WebDriver driver) {
         ExpectedCondition<Boolean> pageLoadCondition = new

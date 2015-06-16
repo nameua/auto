@@ -1,6 +1,8 @@
 package com.auto.test;
 
 /**
+ * Represented all general methods for over the test cases.
+ *
  * Created by none on 09.06.15.
  */
 
@@ -9,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
     private static Logger logger = Logger.getLogger(BaseTest.class);
-
     protected WebDriver driver;
 
     //System.setProperty("webdriver.chrome.driver", this.getClass().getClassLoader().getResource("chromedriver").getPath());
