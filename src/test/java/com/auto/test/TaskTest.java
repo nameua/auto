@@ -27,7 +27,7 @@ public class TaskTest extends BaseTest {
     private final String SEARCH_WORD = "Kreditech";
     @Before
     public void setUp() {
-
+        System.setProperty("webdriver.chrome.driver", this.getClass().getClassLoader().getResource("chromedriver").getPath());
         //driver = new FirefoxDriver();
         //logger.info("Running Firefox browser");
 

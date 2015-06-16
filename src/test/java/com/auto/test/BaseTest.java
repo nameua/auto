@@ -13,7 +13,7 @@ public class BaseTest {
     private static Logger logger = Logger.getLogger(BaseTest.class);
     protected WebDriver driver;
 
-    //System.setProperty("webdriver.chrome.driver", this.getClass().getClassLoader().getResource("chromedriver").getPath());
+
 
 
 }
