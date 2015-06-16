@@ -22,17 +22,20 @@ public class TaskTest extends BaseTest {
     private WhoWeArePage whoWeArePage;
     private WhatWeDoPage whatWeDoPage;
 
+    private final String SEARCH_WORD = "Kreditech";
     @Before
     public void setUp() {
         //driver = new FirefoxDriver();
         //logger.info("Running Firefox browser");
-
         driver = new ChromeDriver();
         logger.info("Running Chrome browser");
         driver.manage().window().maximize();
         logger.info("Maximaze browser");
-        searchPage = PageFactory.initElements(driver, SearchPage.class);
 
+        searchPage = PageFactory.initElements(driver, SearchPage.class);
+        landingPage = PageFactory.initElements(driver, LandingPage.class);
+        whoWeArePage = PageFactory.initElements(driver, WhoWeArePage.class);
+        whatWeDoPage = PageFactory.initElements(driver, WhatWeDoPage.class);
     }
 
     @After
@@ -46,10 +49,10 @@ public class TaskTest extends BaseTest {
     public void searchResult() {
         driver.get("https://www.google.ru");
         logger.info("Navigate to the google.ru");
-        searchPage.clickSearchPage("Kreditech");
-        landingPage = searchPage.navigateToKreditechLink();
-        whoWeArePage = landingPage.clickWhoWeAre();
-        whatWeDoPage = whoWeArePage.clickWhatWeDo();
+        searchPage.clickSearchPage(SEARCH_WORD);
+        searchPage.navigateToKreditechLink();
+        landingPage.clickWhoWeAre();
+        whoWeArePage.clickWhatWeDo();
         whatWeDoPage.verifyCorrectPage();
     }
 

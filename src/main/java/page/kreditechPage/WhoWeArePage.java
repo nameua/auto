@@ -1,8 +1,9 @@
 package page.kreditechPage;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import page.BasePage;
 
 /**
@@ -14,12 +15,14 @@ public class WhoWeArePage extends BasePage {
         super(driver);
     }
 
+    @FindBy (linkText = "What we do")
+    private WebElement whatWeDo;
+
     private static Logger logger = Logger.getLogger(WhoWeArePage.class);
 
-    public WhatWeDoPage clickWhatWeDo(){
+    public void clickWhatWeDo(){
         logger.info("Switch to Who we are Page");
-        driver.findElement(By.linkText("What we do")).click();
+        whatWeDo.click();
         logger.info("Navigate to What we do Page");
-        return new WhatWeDoPage(driver);
     }
 }
