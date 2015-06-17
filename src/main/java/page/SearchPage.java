@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Search page is represents the google.ru page. It's needed to provide ability use a search feature
  * via framework.
- *
+ * <p>
  * Created by tykhon on 6/11/15.
  */
 public class SearchPage extends BasePage {
@@ -38,14 +38,8 @@ public class SearchPage extends BasePage {
     public void clickSearchPage(String text) {
         searchField.sendKeys(text);
         logger.info("Input a " + text + " to the search field");
-        //waitForLoad(driver);
-        //TODO create a method - wait until page was loaded
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         logger.info("Wait until the page is fully loaded");
+        setDelay(500);
         Assert.assertEquals("Kreditech - Digital Banking for Everyone", kreditoLink.getText());
         logger.info("Verify Kreditech - Digital Banking for Everyone is presented on the page.");
     }
@@ -56,10 +50,7 @@ public class SearchPage extends BasePage {
     public void navigateToKreditechLink() {
         logger.info("Navigate to the " + firstLink.getAttribute("href"));
         driver.navigate().to(firstLink.getAttribute("href"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        logger.info("Wait until navigation will be completed");
+        setDelay(500);
     }
 }

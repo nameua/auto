@@ -8,7 +8,7 @@ import page.BasePage;
 
 /**
  * This is the representation of the kreditech.com page
- *
+ * <p>
  * Created by tykhon on 6/12/15.
  */
 public class LandingPage extends BasePage {
@@ -29,11 +29,7 @@ public class LandingPage extends BasePage {
         logger.info("Switch to Landing page");
         whoWeAre.click();
         logger.info("Click the Who we are link");
-
-        try {    Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        setDelay(500);
     }
 
 

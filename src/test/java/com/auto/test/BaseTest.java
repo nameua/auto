@@ -10,10 +10,8 @@ import org.openqa.selenium.WebDriver;
  */
 
 public class BaseTest {
+    
     private static Logger logger = Logger.getLogger(BaseTest.class);
     protected WebDriver driver;
-
-
-
 
 }

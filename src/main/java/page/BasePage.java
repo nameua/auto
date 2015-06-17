@@ -2,36 +2,35 @@ package page;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Represents general methods and descriptions for all the pages.
- *
+ * <p>
  * Created by tykhon on 6/11/15.
  */
 public class BasePage {
 
     protected WebDriver driver;
 
-    public BasePage(WebDriver driver){
-        this.driver=driver;
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
     }
 
     /**
-     * Provide ability to stop execution while the whole page will be loaded into the browser.
+     * This method is for adding a delay and decreasing a code size at the same time.
      *
-     * @param driver - implementation that controls a Chrome browser running on the local machine.
+     * @param milliseconds - set a delay you wanna get.
+     *                     1000 milliseconds = 1 second.
      */
-    //This method is for a waiting while the page will be fully loaded
-    public void waitForLoad(WebDriver driver) {
-        ExpectedCondition<Boolean> pageLoadCondition = new
-                ExpectedCondition<Boolean>() {
-                    public Boolean apply(WebDriver driver) {
-                        return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
-                    }
-                };
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(pageLoadCondition);
+    public void setDelay(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
